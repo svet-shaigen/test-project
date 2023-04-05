@@ -4,26 +4,31 @@ export default function renderImageCard(image) {
     const card = `
         <div class="photo-card">
             <a href="${image.largeImageURL}">
-                <img src="${image.webformatURL}" alt="${image.tags}" class="gallery__img" width="300" loading="lazy" />
+                <div class="gallery__thumb"><img src="${image.webformatURL}" alt="${image.tags}" class="gallery__img" width="300" loading="lazy" /></div>
             </a>
             <div class="box-info">
-                <p class="info-item">
-                    <b>Likes</b>
-                       ${image.likes}
-                </p>
-                </li>
-                <p class="info-item">
-                    <b>Views</b>
-                        ${image.views}
-                </p>
-                <p class="info-item">
-                    <b>Comments</b>
-                        ${image.comments}
-                </p>
-                <p class="info-item">
-                    <b>Downloads</b>
-                        ${image.downloads}
-                </p>
+                <ul class="gallery-info list">
+                    <li>
+                        <p class="gallery-info__text">
+                            <b>Likes</b>
+                                ${image.likes}
+                        </p>
+                    </li>
+                    <li>
+                        <p class="gallery-info__text">
+                            <b>Views</b>
+                                ${image.views}
+                        </p>
+                    <li>
+                        <p class="gallery-info__text">
+                            <b>Comments</b>
+                                ${image.comments}
+                        </p>
+                    <li>
+                        <p class="gallery-info__text">
+                            <b>Downloads</b>
+                                ${image.downloads}
+                        </p>
               </ul>
             </div>
         </div>
