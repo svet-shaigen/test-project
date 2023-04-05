@@ -39,8 +39,6 @@ function onFormSubmit(event) {
             })
             loadMore.style.display = 'flex'
             lightbox.refresh()
-
-
         })
         .catch(error => {
             Notify.failure("Sorry, there are no images matching your search query. Please try again.")
@@ -50,10 +48,8 @@ function onFormSubmit(event) {
 function onLoadMore() {
     getImagesApi.getImages()
         .then(dataImages => {
-            // console.log(dataImages.hits)
             const imagesHits = dataImages.hits
             imagesHits.map(image => {
-                // console.log(image)
                 renderImageCard(image)
             })
             lightbox.refresh()
